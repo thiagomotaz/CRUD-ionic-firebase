@@ -16,21 +16,28 @@
 <ion-content padding>
   <ion-item>
     <ion-label>Name</ion-label>
-    <ion-input [(ngModel)]="item.name" type="text" autofocus></ion-input>
+    <ion-input [(ngModel)]="item.name" type="text"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>Quantity</ion-label>
-    <ion-input [(ngModel)]="item.quantity" type="number"  ></ion-input>
+    <ion-input [(ngModel)]="item.quantity" type="number"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>Price</ion-label>
     <ion-input [(ngModel)]="item.price" type="number"></ion-input>
   </ion-item>
-  <ion-buttons>
-    <button ion-button outline block clear (click)="addItem(item)">Add</button>
+
+  <ion-input type="hidden" [(ngModel)]="item.date"></ion-input>
+
+  <ion-buttons text-center padding>
+    <button ion-button icon-start (click)="addItem(item)" color="primary">
+      <ion-icon name="md-add"></ion-icon>
+      Add
+    </button>
   </ion-buttons>
+
   <!--{{item | json}}-->
 
 </ion-content>

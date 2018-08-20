@@ -22,6 +22,7 @@ export class ShoppingListService{
     }
     
     editItem(item: Item){
+        item.date = new Date().toISOString().slice(0,16).replace("T", " ");
         return this.shoppingListRef.update(item.key, item);
     }
     

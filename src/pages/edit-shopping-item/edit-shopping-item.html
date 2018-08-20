@@ -7,30 +7,42 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>{{item?.name}}</ion-title>
+    <ion-title>{{ item.name }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <ion-item>
-        <ion-label>Name</ion-label>
-        <ion-input [(ngModel)]="item.name" type="text" autofocus></ion-input>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label>Quantity</ion-label>
-        <ion-input [(ngModel)]="item.quantity" type="number"  ></ion-input>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label>Price</ion-label>
-        <ion-input [(ngModel)]="item.price" type="number"></ion-input>
-      </ion-item>
-      <ion-buttons>
-        <button ion-button outline block clear (click)="saveItem(item)">Save</button>
-        <button ion-button outline block clear (click)="deleteItem(item)" color="danger">Delete</button>
-      </ion-buttons>
-      <!--{{item | json}}-->
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input [(ngModel)]="item.name" type="text" autofocus></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Quantity</ion-label>
+    <ion-input [(ngModel)]="item.quantity" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Price</ion-label>
+    <ion-input [(ngModel)]="item.price" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item text-center>
+    <ion-buttons padding>
+
+      <button ion-button icon-start (click)="saveItem(item)" color="secondary">
+        <ion-icon name="md-checkmark"></ion-icon>
+        Save
+      </button>
+
+      <button ion-button icon-start (click)="deleteItem(item)" color="danger">
+        <ion-icon name="md-trash"></ion-icon>
+        Delete
+      </button>
+
+    </ion-buttons>
+  </ion-item>
+  <!--{{item | json}}-->
 </ion-content>

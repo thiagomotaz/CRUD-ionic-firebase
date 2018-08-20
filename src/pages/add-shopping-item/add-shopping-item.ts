@@ -20,23 +20,29 @@ export class AddShoppingItemPage {
   item: Item = {
     name: "",
     quantity: undefined,
-    price: undefined
+    price: undefined,
+    date: new Date().toISOString().slice(0,16).replace("T", " ")
   }
   constructor(public navCtrl: NavController,
-     public navParams: NavParams, 
-     private shopping: ShoppingListService,
-     private toast: ToastService) {
-  }  
+    public navParams: NavParams,
+    private shopping: ShoppingListService,
+    private toast: ToastService) {
+
+  }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddShoppingItemPage');
   }
 
-  addItem(item: Item){
+  addItem(item: Item) {
     this.shopping.addItem(item).then(ref => {
       this.toast.show(item.name + " added!")
       this.navCtrl.setRoot('HomePage', { key: ref.key });
     })
   }
+
+
 
 }
