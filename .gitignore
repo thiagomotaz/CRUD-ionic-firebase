@@ -12,6 +12,8 @@ log.txt
 .vscode/
 npm-debug.log*
 
+firebase.credentials.ts
+
 .idea/
 .ionic/
 .sourcemaps/
